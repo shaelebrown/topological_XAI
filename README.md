@@ -6,7 +6,7 @@ Neural networks learn complicated, and often unexplainable, patterns in data, an
 
 For this example I will be interpreting the predictions of a [facial emotion recognition (FER) transformer model](https://www.google.com/search?client=safari&rls=en&q=motheecreator%2Fvit-Facial-Expression-Recognition&ie=UTF-8&oe=UTF-8) from Hugging Face. This model predicts which of seven emotions (happy, sad, neutral, angry, disgusted, afraid or surprised) is most likely for a given image, and the model was finetuned on several datasets including [this image dataset](https://www.kaggle.com/datasets/noamsegal/affectnet-training-data?resource=download) which we will use as input to the model. Here are a few examples of images and their emotion labels:
 
-!(original_data.png)
+![](original_data.png)
 
 In order to explain the FER model predictions in the context of specific facial I used a [facial image segmentation model](https://huggingface.co/jonathandinu/face-parsing) from Hugging Face to locate facial features. Once I made hypotheses about what calculations the FER model was carrying out, I used an [additional dataset](https://github.com/amrta-coder/LFW-emotion-dataset?tab=readme-ov-file) of masked faces (with happy and neutral emotions) to evaluate my hypotheses.
 
@@ -22,7 +22,7 @@ The FER model learned patterns relating images to emotion labels, and these patt
 
 Most of the image modifications were removing colours like red and yellow from the eyes, nose, mouth or hair: 
 
-!(image_modifications.png)
+![](image_modifications.png)
 
 Therefore I tested the hypotheses that the model had learned relationships between the emotion label and the
 
@@ -37,6 +37,8 @@ I tested these hypotheses by determining the effects of
 3. predicting the emotions of the facemask dataset.
 
 ## Results
+
+![](accuracy_decreases.png)
 
 The first hypothesis testing resulted in a 15% decrease in model accuracy. This was also the case when I did not cover the hair in images, meaning that the model was looking at the eyes, nose and mouth to partially infer emotion.
 
