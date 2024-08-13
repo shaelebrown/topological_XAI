@@ -44,7 +44,7 @@ The FER model accuracy on the sampled images was about 80%, but all three hypoth
 
 The first hypothesis testing resulted in a 15% decrease in model accuracy. This was also the case when I did not cover the hair in images, meaning that the model was looking at the eyes, nose and mouth to partially infer emotion.
 
-The second hypothesis testing resulted in a 35% decrease in model accuracy (both for grayscale and decreasing luminance). This means that the model was looking at colour and luminance to partially infer emotion - images property that should not impact model inference. However, I did not find any racial bias, i.e. a significant decrease in accuracy between caucasian and darker-skinned individuals in the dataset.
+The second hypothesis testing resulted in a 30% decrease in model accuracy (both for grayscale and decreasing luminance). This means that the model was looking at colour and luminance to partially infer emotion - images property that should not impact model inference. However, I did not find any racial bias, i.e. a significant decrease in accuracy between caucasian and darker-skinned individuals in the dataset.
 
 The third hypothesis resulted in a 55% decrease in model accuracy. I suspect that similar results would have been observed in a dataset of people wearing sunglasses, although I could not find a suitable one.
 
