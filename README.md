@@ -38,6 +38,8 @@ I tested these hypotheses by determining the effects of
 
 ## Results
 
+The FER model accuracy on the sampled images was about 80%, but all three hypotheses resulted in significant decreases in prediction accuracy.
+
 <img src="accuracy_decreases.png" width="800">
 
 The first hypothesis testing resulted in a 15% decrease in model accuracy. This was also the case when I did not cover the hair in images, meaning that the model was looking at the eyes, nose and mouth to partially infer emotion.
