@@ -8,7 +8,7 @@ For this example I will be interpreting the predictions of a [facial emotion rec
 
 <img src="original_data.png" width="800">
 
-In order to explain the FER model predictions in the context of specific facial I used a [facial image segmentation model](https://huggingface.co/jonathandinu/face-parsing) from Hugging Face to locate facial features. Once I made hypotheses about what calculations the FER model was carrying out, I used an [additional dataset](https://github.com/amrta-coder/LFW-emotion-dataset?tab=readme-ov-file) of masked faces (with happy and neutral emotions) to evaluate my hypotheses.
+In order to explain the FER model predictions in the context of specific facial features I used a [facial image segmentation model](https://huggingface.co/jonathandinu/face-parsing) from Hugging Face to locate facial features. Once I made hypotheses about what calculations the FER model was carrying out, I used an [additional dataset](https://github.com/amrta-coder/LFW-emotion-dataset?tab=readme-ov-file) of masked faces (with happy and neutral emotions) to evaluate my hypotheses.
 
 ## Topological approach to explainability
 
@@ -44,7 +44,7 @@ The FER model accuracy on the sampled images was about 80%, but all three hypoth
 
 The first hypothesis testing resulted in a 15% decrease in model accuracy. This was also the case when I did not cover the hair in images, meaning that the model was looking at the eyes, nose and mouth to partially infer emotion.
 
-The second hypothesis testing resulted in a 30% decrease in model accuracy (both for grayscale and decreasing luminance). This means that the model was looking at colour and luminance to partially infer emotion - images property that should not impact model inference. However, I did not find any racial bias, i.e. a significant decrease in accuracy between caucasian and darker-skinned individuals in the dataset.
+The second hypothesis testing resulted in a 30% decrease in model accuracy (both for grayscale and decreasing luminance). This means that the model was looking at colour and luminance to partially infer emotion - image properties that should not impact model inference. However, I did not find any racial bias, i.e. a significant decrease in accuracy between caucasian and darker-skinned individuals in the dataset.
 
 The third hypothesis resulted in a 55% decrease in model accuracy. I suspect that similar results would have been observed in a dataset of people wearing sunglasses, although I could not find a suitable one.
 
